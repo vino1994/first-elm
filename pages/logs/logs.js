@@ -10,5 +10,12 @@ Page({
         return util.formatTime(new Date(log))
       })
     })
+  },
+  clearTap() {
+    this.setData({ logs: [] })
+  },
+  //下拉刷新事件
+  onPullDownRefresh: function () {
+    
   }
 })
