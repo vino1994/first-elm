@@ -1,0 +1,16 @@
+<!--index.wxml-->
+<view class="container page">
+  <view class="home-title">
+	  <block>
+			<view class="address"></view>
+	  	<text>闵行区新虹街道申滨路爱博二村</text>
+      <input placeholder="搜索商家、商品名称" type="text" />
+      <view class="hot">
+        <text>吉祥混沌</text>
+        <text>超级机车</text>
+        <text>好粥道</text>
+        <text>棒约翰</text>
+      </view>
+	  </block>
+  </view>
+</view>

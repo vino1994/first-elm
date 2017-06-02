@@ -1,0 +1,41 @@
+/**index.wxss**/
+.container{
+
+}
+.home-title{
+	background: #0098fd;
+	min-height: 200rpx;
+	padding: 30rpx 50rpx;
+}
+.home-title .address{
+	color: #fff;
+  width: 15px;
+  height: 15px;
+  /*background-image:url(../../images/address.png);*/
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+}
+.home-title text{
+	color: #fff;
+	width: 90%;
+	display:inline-block;
+	white-space:nowrap; 
+	overflow:hidden; 
+	text-overflow:ellipsis;
+	vertical-align: bottom;
+}
+.home-title input{
+  background: #fff;
+  height: 60rpx;
+  width: 100%;
+  font-size: 30rpx;
+  text-align: center;
+  border-radius: 30rpx;
+  margin: 20rpx 0 10rpx 0;
+}
+.home-title .hot text{
+  font-size: 28rpx;
+  display: inline-block;
+  width: auto;
+  margin-right: 10rpx;
+}
