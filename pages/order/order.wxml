@@ -1,0 +1,5 @@
+<view class="map_container">
+    <map id="map" longitude="{{longitude}}" latitude="{{latitude}}" scale="16"
+     markers="{{markers}}" style="width:100%;height:100%;" bindregionchange="regionchange" 
+     show-location controls="{{controls}}"></map>
+</view>
