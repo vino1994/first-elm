@@ -57,6 +57,7 @@ Page({
     //   }
     // })
   },
+  //根据手机屏幕确定中心点位置
   getSystemInfo(){
     let _this=this;
     wx.getSystemInfo({
@@ -66,6 +67,31 @@ Page({
           'controls[0].position.top':(res.windowHeight-44)/2
         })
         console.info(res)
+      }
+    })
+  },
+  scanCode(){
+    wx.scanCode({
+      success:function(res){
+        console.info(res)
+      }
+    })
+  },
+  localtionAddr(){
+    let _this=this;
+    wx.getLocation({
+      type: 'wgs84',
+      success: function(res) {
+        console.info(res)
+        _this.setData({
+          latitude : res.latitude,
+          longitude : res.longitude,
+          markers : [{
+            latitude : res.latitude,
+            longitude : res.longitude,
+            title:''
+          }]
+        })
       }
     })
   },

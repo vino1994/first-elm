@@ -21,6 +21,9 @@ Page({
         })
       },
       fail:function(info){
+        _this.setData({
+            'cityInfo.address': '定位失败'
+        })
         console.info(info)
       }
     })
@@ -32,6 +35,9 @@ Page({
         })
       },
       fail: function(info){
+        _this.setData({
+            'cityInfo.address': '定位失败'
+        })
         console.log(info)
       }
     })
