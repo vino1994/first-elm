@@ -8,7 +8,9 @@ Page({
   data: {
     longitude:'',
     latitude:'',
+    //地图标记点
     markers:[],
+    //屏幕中心点位置
     controls:[{
       position:{
         left:null,
@@ -32,14 +34,15 @@ Page({
           _this.setData({
             latitude : data[0].latitude,
             longitude : data[0].longitude,
-            markers:[{
-              latitude : data[0].latitude,
-              longitude : data[0].longitude,
-              title:data[0].name
-            }]
+            // markers:[{
+            //   latitude : data[0].latitude,
+            //   longitude : data[0].longitude,
+            //   title:data[0].name
+            // }]
           })
       }
     })
+    this.mapCtx = wx.createMapContext('map');
     this.getSystemInfo();
     //腾讯地图
     // wx.getLocation({
@@ -77,23 +80,25 @@ Page({
       }
     })
   },
+  //定位所处坐标
   localtionAddr(){
-    let _this=this;
-    wx.getLocation({
-      type: 'wgs84',
-      success: function(res) {
-        console.info(res)
-        _this.setData({
-          latitude : res.latitude,
-          longitude : res.longitude,
-          markers : [{
-            latitude : res.latitude,
-            longitude : res.longitude,
-            title:''
-          }]
-        })
-      }
-    })
+    // let _this=this;
+    // wx.getLocation({
+    //   type: 'gcj02',
+    //   success: function(res) {
+    //     console.info(res)
+    //     _this.setData({
+    //       latitude : res.latitude,
+    //       longitude : res.longitude,
+    //       markers : [{
+    //         latitude : res.latitude,
+    //         longitude : res.longitude,
+    //         title:''
+    //       }]
+    //     })
+    //   }
+    // })
+    this.mapCtx.moveToLocation()
   },
   regionchange(e) {
     console.log(e)
