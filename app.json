@@ -1,32 +1,8 @@
 {
   "pages":[
-    "pages/home/index",
-    "pages/order/order",
-    "pages/personal/personal"
+      "pages/index/index"
   ],
   "window":{
-    "backgroundTextStyle":"light",
-    "navigationBarBackgroundColor": "#0098fd",
-    "navigationBarTitleText": "饿了吗demo",
-    "navigationBarTextStyle":"#fff",
-    "enablePullDownRefresh":true
-  },
-  "tabBar": {
-    "color":"#626262",
-    "backgroundColor":"#fff",
-    "selectedColor":"#0098fd",
-    "position":"bottom",
-    "list": [{
-      "pagePath": "pages/home/index",
-      "iconPath": "images/home.png",
-      "selectedIconPath": "images/home.png",
-      "text": "外卖"
-    } , {
-      "pagePath": "pages/personal/personal",
-      "iconPath": "images/personal.png",
-      "selectedIconPath": "images/personal.png",
-      "text": "我的"
-    }]
   },
   "debug":true
 }
