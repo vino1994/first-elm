@@ -1,39 +1,40 @@
-// import Promise from '../libs/es6-promise';
+import Promise from '../libs/es6-promise';
 
 const SERVER = {
-    base_url: 'https://m.emmars.cn',
-    base_url: 'https://gr.emmars.cn',
+    // base_url: 'https://m.emmars.cn',
+    // base_url: 'https://gr.emmars.cn',
     base_url: 'https://pre.emmars.cn',
-    base_url: 'https://qa.emmars.cn',
+    // base_url: 'https://qa.emmars.cn',
     signKey: 'AOCAQ8AMIIBCgKCAQEAgXuz'
 }
 
-function successCallBack(response) {
-    if (response.data.code == 0){
-
-    }else{
-        wx.showModal({
-            showCancel:false,
-            content: response.data.msg
-        })
-    }
-}
-
-function failCallBack(response) {
-    console.info(22222222222222222)
-    console.info(response)
-}
-
-const newData = {
-    fetchApi: (params) => {
+const api = {
+    fetchApi: function (params) {
         let _this = this;
+        wx.showLoading({
+            title: '加载中...',
+            mask: true
+        })
         return new Promise((resolve, reject) => {
             let data = {
                 url: SERVER.base_url + params.API_URL,
                 data: params.data,
                 method: params.method,
-                success: successCallBack,
-                fail: failCallBack
+                success: function (response) {
+                    if (response.data.code == '1403') {
+                        _this.getLogin(params)
+                    } else {
+                        wx.hideLoading();
+                        resolve(response)
+                    }
+                },
+                fail: function (response) {
+                    wx.hideLoading();
+                    wx.showModal({
+                        showCancel: false,
+                        content: '小怪兽去迷路咯~',
+                    })
+                }
             }
 
             if (params.token) {
@@ -50,6 +51,40 @@ const newData = {
 
             wx.request(data);
         })
+    },
+
+    getLogin: function (params, ...arg) {
+        let _this = this;
+        wx.login({
+            success: (res) => {
+                let param = {
+                    API_URL: '/user/login/wechat',
+                    data: {
+                        code: res.code
+                    },
+                    method: 'POST'
+                }
+                api.fetchApi(param).then((data) => {
+                    if (data.data.code == 0) {
+                        wx.setStorageSync('token', data.data.data.token);
+                        wx.setStorageSync('user_id', data.data.data.user_id);
+                        wx.setStorageSync('openid', data.data.data.openid);
+                        wx.setStorageSync('mobile', data.data.data.mobile);
+                        if (params) {
+                            params(...arg)
+                        }
+                    }
+                    if (data.data.code == '1403') {
+                        _this.getLogin(params, arg)
+                    }
+                }).then(() => {
+                    wx.showModal({
+                        showCancel: false,
+                        content: wx.getStorageSync('mobile')
+                    })
+                })
+            }
+        })
     }
 }
 
@@ -63,5 +98,4 @@ function generateUUID() {
     return uuid;
 }
 
-
-export default newData;
+export { api };
