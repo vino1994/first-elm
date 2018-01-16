@@ -1,3 +1,18 @@
-<view class="content">
-    
+<view class="content" style="height:{{hg}};" wx:if="{{!isSupportBiology}}">
+    <form bindsubmit='login'>
+        <view class="login-title">VINO DEMO</view>
+        <view class="form-content">
+            <view class="form-title">
+                <view class="title">用户名：</view>
+                <input name="name" type="text"></input>
+            </view>
+            <view class="form-title">
+                <view class="title">密  码：</view>
+                <input name="pwd" type="number" password='true'></input>
+            </view>
+        </view>
+        <view class="loing-btn">
+            <button type="primary" formType="submit">登录</button>
+        </view>
+    </form>
 </view>

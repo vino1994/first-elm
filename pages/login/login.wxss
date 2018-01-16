@@ -1,1 +1,63 @@
 /* pages/login/login.wxss */
+
+.content {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    background-color: #e2e2e2;
+}
+
+.content .login-title {
+    text-align: center;
+    font-size: 50rpx;
+    font-weight: bold;
+    margin-bottom: 100rpx;
+}
+
+.content .form-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    background-color: #fff;
+    padding: 20rpx 50rpx;
+    border-radius: 10rpx;
+}
+
+.content .form-content .form-title {
+    font-size: 30rpx;
+    display: inline-flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+}
+
+.content .form-content .form-title:last-child {
+    margin-top: 20rpx;
+}
+
+.content .form-content .form-title .title {
+    display: inline-flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    min-width: 140rpx;
+}
+
+.content .form-content .form-title input {
+    display: inline-flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    border: 0;
+    border: 2rpx solid #e1e1e1;
+    height:64rpx;
+    line-height: 64rpx;
+}
