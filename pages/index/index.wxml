@@ -1,10 +1,10 @@
-<view class="content">
-    <view class="category category-audio">
-        <view class="title category-audio-title">语音功能</view>
-        <view class="content category-audio-content">
-            <button type="default" bindtap="start" style="width:400rpx;">录音</button>
-            <button type="primary" bindtap="audioPlay">播放</button>
-            <button type="warn" bindtap="audioPause">暂停</button>
-        </view>
-    </view>
+<view class="content" style="height:{{hg}};">
+    <scroll-view>
+    </scroll-view>
+</view>
+<view class="page-bottom">
+    <view class="img" bindtap="change">音</view>
+    <button type="default" bind:touchmove="touchmove" bind:touchstart="touchstart" bind:touchend="touchend" wx:if="{{isVoice}}">{{audioContent}}</button>
+    <input type="text" confirm-type="send" focus="true" cursor-spacing="10" wx:else></input>
+    <view class="img emoji">情</view>
 </view>

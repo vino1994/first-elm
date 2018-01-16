@@ -7,6 +7,7 @@ Page({
      * 页面的初始数据
      */
     data: {
+        hg:'',
         isSupportBiology: true,
         supportMode: ''      //设备支持的认证方式
     },

@@ -8,25 +8,57 @@ Page({
      * 页面的初始数据
      */
     data: {
+        hg: '',
+        isVoice: false,
+        audioContent: '按住 说话'
     },
 
     /**
      * 生命周期函数--监听页面加载
      */
     onLoad: function (options) {
-        
+        this.setData({
+            hg: app.globalData.system.windowHeight + 'px'
+        })
     },
 
     /**
-     * 开始录音
+     * 开始触摸
      */
-    start: function () {
-        wx.startRecord({
-            success: function (res) {
-                console.info(res)
-            }
+    touchstart: function (e) {
+        console.info("开始触摸")
+        console.info(e)
+        this.setData({
+            audioContent: '松开 结束'
         })
     },
+
+    /**
+    * 结束触摸
+    */
+    touchend: function (e) {
+        console.info("结束触摸")
+        console.info(e)
+        this.setData({
+            audioContent: '按住 说话'
+        })
+    },
+
+    /**
+    * 触摸移动
+    */
+    touchmove: function (e) {
+        console.info("触摸移动")
+        console.info(e)
+    },
+
+    //语音文字转换
+    change: function () {
+        this.setData({
+            isVoice: this.data.isVoice ? false : true
+        })
+    },
+
     /**
      * 生命周期函数--监听页面显示
      */
