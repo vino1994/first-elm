@@ -1,80 +1,28 @@
-/* pages/index/index.wxss */
-
-#map {
-    width: 100%;
+.content {
+    background-color: #e2e2e2;
 }
 
-.map-tabs {
-    height: 92rpx;
-    width: 100%;
-    background: rgba(255, 255, 255, 0.8);
+.content .category {
+    background-color: #fff;
+    padding: 20rpx;
 }
 
-.map-tabs .tabs {
+.content .category .title {
+    font-size: 36rpx;
+    color: #000;
+}
+
+.content .category .content {
     display: flex;
     flex-direction: row;
-    box-sizing: border-box;
-    height: 86rpx;
-    padding: 0 36rpx;
+    flex-wrap: nowrap;
 }
 
-.map-tabs .tabs .tabs-item {
-    width: 200rpx;
-    height: 86rpx;
-    text-align: center;
+.content .category .category-audio-content {
+    background-color: #fff;
+    margin-top: 20rpx;
 }
 
-.map-tabs .tabs .tabs-item:nth-child(2) {
-    margin: 0 36rpx;
-}
-
-.map-tabs .tabs .tabs-item text.active {
-    color: #29c1c2;
-    display: inline-block;
-    font-size: 22rpx;
-    height: 100%;
-    width: 80%;
-}
-
-.map-tabs .tabs .tabs-item text.noActive {
-    display: inline-block;
-    font-size: 22rpx;
-    height: 100%;
-    width: 80%;
-}
-
-.map-tabs .tabs-bottom-active {
-    position: relative;
-    box-sizing: border-box;
-    width: 100%;
-    height: 6rpx;
-    margin: 0 36rpx;
-}
-
-.map-tabs .tabs-bottom-active .active {
-    position: absolute;
-    width: 200rpx;
-    height: 6rpx;
-    background: #29c1c2;
-    top: 0;
-    transition: left 0.5s;
-    -webkit-transition: left 0.5s;
-}
-
-.mapCover .seach {
-    height: 84rpx;
-    width: 562rpx;
-    background: #fff;
-    margin-top: 24rpx;
-    margin-left: 36rpx;
-    border-radius: 6rpx;
-    box-shadow: 0 4rpx 8rpx 0 rgba(0, 0, 0, 0.10);
-}
-
-.mapCover .seach .seach-text {
-    font-size: 26rpx;
-    height: 84rpx;
-    line-height: 84rpx;
-    color: #c8c8c8;
-    padding-left: 38rpx;
+.content .category .category-audio-content button{
+    font-size: 28rpx;
 }

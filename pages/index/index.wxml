@@ -1,25 +1,10 @@
-<view>
-    <view class="map-tabs">
-        <view class="tabs">
-            <view class="tabs-item">
-                <text class="{{isChecked == 1 ? 'active':'noActive'}}" data-num="1" data-type="0" bindtap="changeTabs">全部</text>
-            </view>
-            <view class="tabs-item {{isChecked == 2 ? 'active':''}}">
-                <text class="{{isChecked == 2 ? 'active':'noActive'}}" data-num="2" data-type="1" bindtap="changeTabs">桌面充电器</text>
-            </view>
-            <view class="tabs-item {{isChecked == 3 ? 'active':''}}">
-                <text class="{{isChecked == 3 ? 'active':'noActive'}}" data-num="3" data-type="2" bindtap="changeTabs">随身充电宝</text>
-            </view>
-        </view>
-        <view class="tabs-bottom-active">
-            <view class="active" style="left:{{leftAnimation*239}}rpx;"></view>
+<view class="content">
+    <view class="category category-audio">
+        <view class="title category-audio-title">语音功能</view>
+        <view class="content category-audio-content">
+            <button type="default" bindtap="start" style="width:400rpx;">录音</button>
+            <button type="primary" bindtap="audioPlay">播放</button>
+            <button type="warn" bindtap="audioPause">暂停</button>
         </view>
     </view>
-    <map id="map" scale="16" longitude="{{longitude}}" latitude="{{latitude}}" show-location="true" style="height:{{mapHeight}}px;">
-        <cover-view class="mapCover">
-            <cover-view class="seach" bindtap="getLocation">
-                <cover-view class="seach-text">搜索附近小怪兽和商铺</cover-view>
-            </cover-view>
-        </cover-view>
-    </map>
 </view>
