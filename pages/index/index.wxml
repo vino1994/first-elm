@@ -1,11 +1,17 @@
+<import src="../components/emoji.wxml" />
+
 <view class="content" style="height:{{hg}};">
     <scroll-view>
     </scroll-view>
 </view>
+
 <view class="page-bottom">
-    <image class="img" src="/Images/index/siri.png" bindtap="change" wx:if="{{isVoice}}" />
-    <image class="img" src="/Images/index/WORD@3x.png" bindtap="change" wx:else />
-    <button type="default" bind:touchmove="touchmove" bind:touchstart="touchstart" bind:touchend="touchend" wx:if="{{isVoice}}">{{audioContent}}</button>
-    <input type="text" confirm-type="send" focus="true" cursor-spacing="10" wx:else></input>
-    <image class="img emoji" src="/Images/index/emoji.png" bindtap='sendEmoji' />
+    <view class="bottom">
+        <image class="img" src="/Images/index/siri.png" bindtap="change" wx:if="{{isVoice}}" />
+        <image class="img" src="/Images/index/WORD@3x.png" bindtap="change" wx:else />
+        <button type="default" bind:touchmove="touchmove" bind:touchstart="touchstart" bind:touchend="touchend" wx:if="{{isVoice}}">{{audioContent}}</button>
+        <input type="text" confirm-type="send" focus="true" cursor-spacing="10" wx:else></input>
+        <image class="img emoji" src="/Images/index/emoji.png" bindtap='sendEmoji' />
+    </view>
+    <template is="emoji" />
 </view>

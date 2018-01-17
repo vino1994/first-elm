@@ -1,0 +1,80 @@
+<!--pages/components/emoji.wxml-->
+<template name="emoji">
+    <view class="grids">
+        <view class="grid">
+            <view class="grid_icon">
+                11
+            </view>
+        </view>
+        <view class="grid">
+            <view class="grid_icon">
+                11
+            </view>
+        </view>
+        <view class="grid">
+            <view class="grid_icon">
+                11
+            </view>
+        </view>
+        <view class="grid">
+            <view class="grid_icon">
+                11
+            </view>
+        </view>
+        <view class="grid">
+            <view class="grid_icon">
+                11
+            </view>
+        </view>
+        <view class="grid">
+            <view class="grid_icon">
+                11
+            </view>
+        </view>
+        <view class="grid">
+            <view class="grid_icon">
+                11
+            </view>
+        </view>
+        <view class="grid">
+            <view class="grid_icon">
+                11
+            </view>
+        </view>
+        <view class="grid">
+            <view class="grid_icon">
+                11
+            </view>
+        </view>
+        <view class="grid">
+            <view class="grid_icon">
+                11
+            </view>
+        </view>
+        <view class="grid">
+            <view class="grid_icon">
+                11
+            </view>
+        </view>
+        <view class="grid">
+            <view class="grid_icon">
+                11
+            </view>
+        </view>
+        <view class="grid">
+            <view class="grid_icon">
+                11
+            </view>
+        </view>
+        <view class="grid">
+            <view class="grid_icon">
+                11
+            </view>
+        </view>
+        <view class="grid">
+            <view class="grid_icon">
+                11
+            </view>
+        </view>
+    </view>
+</template>

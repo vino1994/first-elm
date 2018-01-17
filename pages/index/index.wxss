@@ -1,3 +1,5 @@
+@import "../components/emoji.wxss";
+
 .content {
     background-color: #3f3f3f;
 }
@@ -6,6 +8,10 @@
     position: fixed;
     bottom: 0;
     left: 0;
+    width: 100%;
+}
+
+.bottom {
     width: 714rpx;
     background-color: #e5e5e7;
     box-sizing: content-box;
@@ -14,9 +20,10 @@
     justify-content: center;
     align-items: center;
     align-content: center;
+    border-bottom: 1px solid #c7c7ca;
 }
 
-.page-bottom .img {
+.bottom .img {
     display: inline-flex;
     width: 60rpx;
     height: 60rpx;
@@ -24,7 +31,7 @@
     justify-content: center;
 }
 
-.page-bottom button {
+.bottom button {
     display: inline-flex;
     font-size: 32rpx;
     width: 560rpx;
@@ -32,12 +39,12 @@
     justify-content: center;
 }
 
-.page-bottom input {
+.bottom input {
     display: inline-flex;
     height: 76rpx;
     font-size: 32rpx;
     width: 540rpx;
-    border: 1px solid rgba(0, 0, 0, 0.2);
+    border: 2rpx solid rgba(0, 0, 0, 0.2);
     border-radius: 10rpx;
     padding: 0 10rpx;
     background-color: #fff;

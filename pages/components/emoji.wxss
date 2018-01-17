@@ -1,0 +1,21 @@
+/* pages/components/emoji.wxss */
+.grids {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    padding: 20rpx 30rpx;
+    background-color: #e5e5e7;
+    display: none;
+}
+
+.grids .grid {
+    display: inline-flex;
+    flex-direction: row;
+    height: 67rpx;
+    width: 67rpx;
+    margin-right: 20rpx;
+    margin-bottom: 20rpx;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+}
