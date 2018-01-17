@@ -9,7 +9,7 @@ Page({
      */
     data: {
         hg: '',
-        isVoice: false,
+        isVoice: true,
         audioContent: '按住 说话'
     },
 

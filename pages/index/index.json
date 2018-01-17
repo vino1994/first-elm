@@ -1,4 +1,5 @@
 {
     "navigationBarTextStyle": "white",
+    "backgroundColor": "#3f3f3f",
     "navigationBarTitleText": "语音助手"
 }

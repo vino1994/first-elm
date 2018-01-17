@@ -18,9 +18,8 @@
 
 .page-bottom .img {
     display: inline-flex;
-    width: 70rpx;
-    height: 70rpx;
-    line-height: 70rpx;
+    width: 60rpx;
+    height: 60rpx;
     border-radius: 100%;
     justify-content: center;
 }
