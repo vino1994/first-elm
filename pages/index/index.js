@@ -52,11 +52,16 @@ Page({
         console.info(e)
     },
 
-    //语音文字转换
+    //语音文字切换
     change: function () {
         this.setData({
             isVoice: this.data.isVoice ? false : true
         })
+    },
+
+    //发送表情
+    sendEmoji:function(){
+        
     },
 
     /**

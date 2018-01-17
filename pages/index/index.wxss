@@ -36,9 +36,11 @@
     display: inline-flex;
     height: 76rpx;
     font-size: 32rpx;
-    width: 562rpx;
+    width: 540rpx;
     border: 1px solid rgba(0, 0, 0, 0.2);
     border-radius: 10rpx;
     padding: 0 10rpx;
     background-color: #fff;
+    margin-left: auto;
+    margin-right: auto;
 }
