@@ -1,5 +1,3 @@
-<import src="../components/emoji.wxml" />
-
 <view class="content" style="height:{{hg}};">
     <scroll-view>
     </scroll-view>
@@ -7,11 +5,12 @@
 
 <view class="page-bottom">
     <view class="bottom">
-        <image class="img" src="/Images/index/siri.png" bindtap="change" wx:if="{{isVoice}}" />
-        <image class="img" src="/Images/index/WORD@3x.png" bindtap="change" wx:else />
+        <image class="img" src="/Images/index/siri.png" bindtap="changeWord" wx:if="{{isVoice}}" />
+        <image class="img" src="/Images/index/WORD@3x.png" bindtap="changeVoice" wx:else />
         <button type="default" bind:touchmove="touchmove" bind:touchstart="touchstart" bind:touchend="touchend" wx:if="{{isVoice}}">{{audioContent}}</button>
-        <input type="text" confirm-type="send" focus="true" cursor-spacing="10" wx:else></input>
-        <image class="img emoji" src="/Images/index/emoji.png" bindtap='sendEmoji' />
+        <input id="ipt" value="{{value}}" type="text" confirm-type="send" focus="{{focus}}" cursor-spacing="10" wx:else />
+        <image class="img emoji" src="/Images/index/emoji.png" bindtap='showEmoji' />
     </view>
-    <template is="emoji" />
+    <emoji id="emoji" bindcustomevent="changeValue"></emoji>
+    <!-- <dialog id='dialog' title='我是标题' content='恭喜你，学会了小程序组件' cancelText='知道了' confirm='谢谢你' bind:cancelEvent="_cancelEvent" bind:confirmEvent="_confirmEvent"></dialog> -->
 </view>

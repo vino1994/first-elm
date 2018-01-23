@@ -1,4 +1,4 @@
-@import "../components/emoji.wxss";
+/* @import "../components/emoji.wxss"; */
 
 .content {
     background-color: #3f3f3f;
@@ -39,7 +39,7 @@
     justify-content: center;
 }
 
-.bottom input {
+.bottom #ipt {
     display: inline-flex;
     height: 76rpx;
     font-size: 32rpx;

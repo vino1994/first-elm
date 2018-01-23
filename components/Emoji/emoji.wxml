@@ -1,0 +1,14 @@
+<!--components/emoji/emoji.wxml-->
+<view class="grids" style="display:{{show}};">
+    <swiper indicator-dots="true">
+        <block wx:for="{{emojiList}}" wx:key="*this" wx:for-item="item">
+            <swiper-item>
+                <view class="grid" wx:for="{{item}}" wx:key="*this" wx:for-item="j" data-id="{{j}}" bindtap="_choose">
+                    <view class="grid_icon">
+                        <image src="{{j}}"></image>
+                    </view>
+                </view>
+            </swiper-item>
+        </block>
+    </swiper>
+</view>

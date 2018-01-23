@@ -1,5 +1,8 @@
 {
     "navigationBarTextStyle": "white",
     "backgroundColor": "#3f3f3f",
-    "navigationBarTitleText": "语音助手"
+    "navigationBarTitleText": "语音助手",
+    "usingComponents": {
+        "emoji": "/components/Emoji/emoji"
+    }
 }

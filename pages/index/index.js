@@ -9,8 +9,11 @@ Page({
      */
     data: {
         hg: '',
-        isVoice: true,
-        audioContent: '按住 说话'
+        isVoice: true,  //是否语音
+        audioContent: '按住 说话',
+        focus: false,    //是否打开原生键盘
+        isEmoji: false,    //是否打开表情
+        value: ''
     },
 
     /**
@@ -20,6 +23,15 @@ Page({
         this.setData({
             hg: app.globalData.system.windowHeight + 'px'
         })
+    },
+    /**
+     * 生命周期函数--监听页面初次渲染完成
+     */
+    onReady: function () {
+        this.emoji = this.selectComponent("#emoji");
+        console.info(this.emoji)
+        // this.dialog = this.selectComponent("#dialog");
+        // console.info(this.dialog)
     },
 
     /**
@@ -52,57 +64,66 @@ Page({
         console.info(e)
     },
 
-    //语音文字切换
-    change: function () {
+    //设置input的value
+    changeValue: function (e) {
         this.setData({
-            isVoice: this.data.isVoice ? false : true
+            value: this.data.value + e.detail.value
         })
     },
 
+
+
+
+
+
+
+
+    //语音切换文字
+    changeVoice: function () {
+        this.setData({
+            isVoice: true,
+            focus: false
+        })
+        this.emoji._hideEmoji();
+    },
+
+    //文字切换语音
+    changeWord: function () {
+        this.setData({
+            isVoice: false,
+            focus: true
+        })
+        this.emoji._hideEmoji();
+    },
+
     //发送表情
-    sendEmoji:function(){
-        
+    showEmoji: function () {
+        this.setData({
+            isVoice: false,
+            isEmoji: this.data.isEmoji ? false : true,
+            focus: false
+        })
+        if (this.data.isEmoji) {
+            this.emoji._showEmoji();
+        } else {
+            this.emoji._hideEmoji();
+        }
     },
 
-    /**
-     * 生命周期函数--监听页面显示
-     */
-    onShow: function () {
 
+
+
+    showDialog() {
+        this.dialog.showDialog();
     },
-
-    /**
-     * 生命周期函数--监听页面隐藏
-     */
-    onHide: function () {
-
+    //取消事件
+    _cancelEvent() {
+        console.log('你点击了取消');
+        this.dialog.hideDialog();
     },
-
-    /**
-     * 生命周期函数--监听页面卸载
-     */
-    onUnload: function () {
-
-    },
-
-    /**
-     * 页面相关事件处理函数--监听用户下拉动作
-     */
-    onPullDownRefresh: function () {
-
-    },
-
-    /**
-     * 页面上拉触底事件的处理函数
-     */
-    onReachBottom: function () {
-
-    },
-
-    /**
-     * 用户点击右上角分享
-     */
-    onShareAppMessage: function () {
-
+    //确认事件
+    _confirmEvent() {
+        console.log('你点击了确定');
+        this.dialog.hideDialog();
     }
 })
