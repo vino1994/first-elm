@@ -1,4 +1,5 @@
 import { api } from '../../Data/data.js';
+import record from '../../Utils/record.js'
 
 const app = getApp();
 // pages/index/index.js
@@ -13,7 +14,8 @@ Page({
         audioContent: '按住 说话',
         focus: false,    //是否打开原生键盘
         isEmoji: false,    //是否打开表情
-        value: ''
+        value: '',
+        sendValue: ''
     },
 
     /**
@@ -69,6 +71,18 @@ Page({
         this.setData({
             value: this.data.value + e.detail.value
         })
+    },
+
+    //send
+    send: function (e) {
+        if (!!e.detail.value) {
+            this.setData({
+                sendValue: e.detail.value,
+                value: ''
+            })
+            record.emojiHandle(this.data.sendValue)
+            this.emoji._hideEmoji();
+        }
     },
 
 

@@ -1,4 +1,5 @@
 // components/emoji/emoji.js
+const app = getApp();
 Component({
     /**
      * 组件的属性列表
@@ -74,9 +75,9 @@ Component({
                 } else {
                     pathArr[5].push(pa)
                 }
-                // pathArr.push(path)
             }
             console.info(pathArr)
+            app.globalData.emoji = pathArr;
             this.setData({
                 emojiList: pathArr
             })

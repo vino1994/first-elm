@@ -3,7 +3,7 @@
     <swiper indicator-dots="true">
         <block wx:for="{{emojiList}}" wx:key="idx" wx:for-item="item" wx:for-index="idx">
             <swiper-item>
-                <view class="grid" wx:for="{{item}}" wx:key="*this" wx:for-item="j" data-code="{{j.code}}" bindtap="_choose">
+                <view class="grid" wx:for="{{item}}" wx:key="j.code" wx:for-item="j" data-code="{{j.code}}" bindtap="_choose">
                     <view class="grid_icon">
                         <image src="{{j.path}}"></image>
                     </view>
