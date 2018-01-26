@@ -1,5 +1,6 @@
 import { api } from '../../Data/data.js';
 import record from '../../Utils/record.js'
+import gs from '../../Utils/gs.js'
 
 const app = getApp();
 // pages/index/index.js
@@ -15,14 +16,27 @@ Page({
         focus: false,    //是否打开原生键盘
         isEmoji: false,    //是否打开表情
         value: '',
-        sendValue: ''
+        sendValue: '',
+        myImgUrl: '',
+        chatList: []
     },
 
     /**
      * 生命周期函数--监听页面加载
      */
     onLoad: function (options) {
+        let _this = this;
+        if (!!wx.getStorageSync('userInfo')) {
+            this.init();
+        } else {
+            gs.login(function () {
+                _this.init();
+            });
+        }
+    },
+    init: function () {
         this.setData({
+            myImgUrl: wx.getStorageSync('userInfo').avatarUrl,
             hg: app.globalData.system.windowHeight + 'px'
         })
     },
@@ -66,6 +80,13 @@ Page({
         console.info(e)
     },
 
+    //获取input的value
+    entry: function (e) {
+        this.setData({
+            value: e.detail.value
+        })
+    },
+
     //设置input的value
     changeValue: function (e) {
         this.setData({
@@ -75,6 +96,9 @@ Page({
 
     //send
     send: function (e) {
+        let list = {
+            
+        }
         if (!!e.detail.value) {
             this.setData({
                 sendValue: e.detail.value,
@@ -82,6 +106,9 @@ Page({
             })
             record.emojiHandle(this.data.sendValue)
             this.emoji._hideEmoji();
+            this.setData({
+                chatList:''
+            })
         }
     },
 

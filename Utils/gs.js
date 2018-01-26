@@ -12,6 +12,25 @@ function getSystemInfo(callback) {
     })
 }
 
+//获取用户信息
+function login(callback) {
+    wx.login({
+        success: function (res) {
+            wx.getUserInfo({
+                withCredentials: true,
+                success: function (respon) {
+                    wx.setStorage({
+                        key: 'userInfo',
+                        data: respon.userInfo
+                    })
+                    callback(true);
+                }
+            })
+        }
+    })
+}
+
 module.exports = {
-    getSystemInfo: getSystemInfo
+    getSystemInfo: getSystemInfo,
+    login: login
 }

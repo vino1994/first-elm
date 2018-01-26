@@ -1,5 +1,55 @@
 <view class="content" style="height:{{hg}};">
     <scroll-view>
+        <view class="dialogue">
+            <view class="right">
+                <view class="cont">阿斯蒂芬阿斯蒂芬阿斯蒂芬阿斯蒂芬阿斯蒂芬阿斯蒂芬</view>
+                <image src="{{myImgUrl}}"></image>
+            </view>
+            <view class="right left">
+                <image src="{{myImgUrl}}"></image>
+                <view class="cont">阿斯蒂芬阿斯蒂芬阿斯蒂芬阿斯蒂芬阿斯蒂芬阿斯蒂芬</view>
+            </view>
+            <view class="right">
+                <view class="cont">阿斯蒂芬阿斯蒂芬阿斯蒂芬阿斯蒂芬阿斯蒂芬阿斯蒂芬</view>
+                <image src="{{myImgUrl}}"></image>
+            </view>
+            <view class="right left">
+                <image src="{{myImgUrl}}"></image>
+                <view class="cont">阿斯蒂芬阿斯蒂芬阿斯蒂芬阿斯蒂芬阿斯蒂芬阿斯蒂芬</view>
+            </view>
+            <view class="right">
+                <view class="cont">阿斯蒂芬阿斯蒂芬阿斯蒂芬阿斯蒂芬阿斯蒂芬阿斯蒂芬</view>
+                <image src="{{myImgUrl}}"></image>
+            </view>
+            <view class="right left">
+                <image src="{{myImgUrl}}"></image>
+                <view class="cont">阿斯蒂芬阿斯蒂芬阿斯蒂芬阿斯蒂芬阿斯蒂芬阿斯蒂芬</view>
+            </view>
+            <view class="right">
+                <view class="cont">阿斯蒂芬阿斯蒂芬阿斯蒂芬阿斯蒂芬阿斯蒂芬阿斯蒂芬</view>
+                <image src="{{myImgUrl}}"></image>
+            </view>
+            <view class="right left">
+                <image src="{{myImgUrl}}"></image>
+                <view class="cont">阿斯蒂芬阿斯蒂芬阿斯蒂芬阿斯蒂芬阿斯蒂芬阿斯蒂芬</view>
+            </view>
+            <view class="right">
+                <view class="cont">阿斯蒂芬阿斯蒂芬阿斯蒂芬阿斯蒂芬阿斯蒂芬阿斯蒂芬</view>
+                <image src="{{myImgUrl}}"></image>
+            </view>
+            <view class="right left">
+                <image src="{{myImgUrl}}"></image>
+                <view class="cont">阿斯蒂芬阿斯蒂芬阿斯蒂芬阿斯蒂芬阿斯蒂芬阿斯蒂芬</view>
+            </view>
+            <view class="right">
+                <view class="cont">阿斯蒂芬阿斯蒂芬阿斯蒂芬阿斯蒂芬阿斯蒂芬阿斯蒂芬</view>
+                <image src="{{myImgUrl}}"></image>
+            </view>
+            <view class="right left">
+                <image src="{{myImgUrl}}"></image>
+                <view class="cont">阿斯蒂芬阿斯蒂芬阿斯蒂芬阿斯蒂芬阿斯蒂芬阿斯蒂芬</view>
+            </view>
+        </view>
     </scroll-view>
 </view>
 
@@ -8,7 +58,7 @@
         <image class="img" src="/Images/index/siri.png" bindtap="changeWord" wx:if="{{isVoice}}" />
         <image class="img" src="/Images/index/WORD@3x.png" bindtap="changeVoice" wx:else />
         <button type="default" bind:touchmove="touchmove" bind:touchstart="touchstart" bind:touchend="touchend" wx:if="{{isVoice}}">{{audioContent}}</button>
-        <input id="ipt" value="{{value}}" type="text" confirm-type="send" focus="{{focus}}" cursor-spacing="10" bindconfirm="send" wx:else />
+        <input id="ipt" value="{{value}}" type="text" confirm-type="send" focus="{{focus}}" cursor-spacing="10" bindinput="entry" bindconfirm="send" wx:else />
         <image class="img emoji" src="/Images/index/emoji.png" bindtap='showEmoji' />
     </view>
     <emoji id="emoji" bindcustomevent="changeValue"></emoji>

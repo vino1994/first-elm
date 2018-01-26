@@ -2,6 +2,84 @@
 
 .content {
     background-color: #3f3f3f;
+    margin-bottom: 110rpx;
+}
+
+.content scroll-view {
+    width: 750rpx;
+    height: auto;
+    background: #3f3f3f;
+}
+
+.content scroll-view .dialogue {
+    width: 710rpx;
+    margin: 20rpx;
+    display: flex;
+    flex-direction: column;
+}
+
+.dialogue .right {
+    display: inline-flex;
+    justify-content: flex-end;
+    margin-top: 20rpx;
+}
+
+.dialogue .right:first-child {
+    margin-top: 0;
+}
+
+.dialogue .right .cont {
+    display: inline-flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 0 20rpx;
+    border-radius: 10rpx;
+    max-width: 460rpx;
+    background: #a2e563;
+    font-size: 30rpx;
+    position: relative;
+}
+
+.dialogue .right .cont::after {
+    position: absolute;
+    content: '';
+    width: 20rpx;
+    height: 20rpx;
+    background: #a2e563;
+    right: -8rpx;
+    top: 30rpx;
+    transform: rotate(45deg);
+}
+
+.dialogue .right image {
+    width: 80rpx;
+    height: 80rpx;
+    /* border-radius: 100%; */
+    margin-left: 20rpx;
+}
+
+.dialogue .left {
+    justify-content: flex-start;
+}
+
+.dialogue .left .cont {
+    background: #fff;
+}
+
+.dialogue .left image {
+    margin-left: 0;
+    margin-right: 20rpx;
+}
+
+.dialogue .left .cont::after {
+    position: absolute;
+    content: '';
+    width: 20rpx;
+    height: 20rpx;
+    background: #fff;
+    left: -8rpx;
+    top: 30rpx;
+    transform: rotate(45deg);
 }
 
 .page-bottom {
