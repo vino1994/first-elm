@@ -51,26 +51,22 @@ Component({
         //遍历emoji文件
         getEmoji: function () {
             let pathArr = [[], [], [], [], [], []];
-            for (let i = 1; i < 135; i++) {
+            for (let i = 0; i < 135; i++) {
                 let pa = {
                     path : '',
                     code : ''
                 };
-                if (i < 10) {
-                    pa.path = `/libs/wxParse/emojis/0${i}.gif`;
-                } else {
-                    pa.path = `/libs/wxParse/emojis/${i}.gif`;
-                }
+                pa.path = `/libs/wxParse/emojis/${i}.gif`;
                 pa.code = `[em_${i}]`;
-                if (0 <= i && i < 25) {
+                if (0 <= i && i < 24) {
                     pathArr[0].push(pa)
-                } else if (24 <= i && i < 49) {
+                } else if (23 <= i && i < 48) {
                     pathArr[1].push(pa)
-                } else if (48 <= i && i < 73) {
+                } else if (47 <= i && i < 72) {
                     pathArr[2].push(pa)
-                } else if (72 <= i && i < 97) {
+                } else if (71 <= i && i < 96) {
                     pathArr[3].push(pa)
-                } else if (96 <= i && i < 121) {
+                } else if (95 <= i && i < 120) {
                     pathArr[4].push(pa)
                 } else {
                     pathArr[5].push(pa)

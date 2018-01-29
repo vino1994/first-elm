@@ -1,4 +1,8 @@
-/* @import "../components/emoji.wxss"; */
+@import "/libs/wxParse/wxParse.wxss";
+
+page {
+    background-color: #3f3f3f;
+}
 
 .content {
     background-color: #3f3f3f;
@@ -9,6 +13,7 @@
     width: 750rpx;
     height: auto;
     background: #3f3f3f;
+    padding-bottom: 110rpx;
 }
 
 .content scroll-view .dialogue {
@@ -21,7 +26,6 @@
 .dialogue .right {
     display: inline-flex;
     justify-content: flex-end;
-    margin-top: 20rpx;
 }
 
 .dialogue .right:first-child {

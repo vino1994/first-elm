@@ -1,6 +1,7 @@
 import { api } from '../../Data/data.js';
-import record from '../../Utils/record.js'
-import gs from '../../Utils/gs.js'
+import record from '../../Utils/record.js';
+import gs from '../../Utils/gs.js';
+import WxParse from '../../libs/wxParse/wxParse.js';
 
 const app = getApp();
 // pages/index/index.js
@@ -18,7 +19,8 @@ Page({
         value: '',
         sendValue: '',
         myImgUrl: '',
-        chatList: []
+        chatList: [],
+        article: ''
     },
 
     /**
@@ -96,20 +98,14 @@ Page({
 
     //send
     send: function (e) {
-        let list = {
-            
-        }
         if (!!e.detail.value) {
             this.setData({
                 sendValue: e.detail.value,
                 value: ''
             })
-            record.emojiHandle(this.data.sendValue)
-            this.emoji._hideEmoji();
-            this.setData({
-                chatList:''
-            })
+            this.data.article = record.emojiHandle(this.data.sendValue)
         }
+        WxParse.wxParse('article', 'html', this.data.article, this, 5);
     },
 
 

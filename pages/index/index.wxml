@@ -1,53 +1,19 @@
+<import src="/libs/wxParse/wxParse.wxml" />
 <view class="content" style="height:{{hg}};">
-    <scroll-view>
+    <scroll-view enable-back-to-top="true">
         <view class="dialogue">
-            <view class="right">
-                <view class="cont">阿斯蒂芬阿斯蒂芬阿斯蒂芬阿斯蒂芬阿斯蒂芬阿斯蒂芬</view>
-                <image src="{{myImgUrl}}"></image>
-            </view>
-            <view class="right left">
-                <image src="{{myImgUrl}}"></image>
-                <view class="cont">阿斯蒂芬阿斯蒂芬阿斯蒂芬阿斯蒂芬阿斯蒂芬阿斯蒂芬</view>
-            </view>
-            <view class="right">
-                <view class="cont">阿斯蒂芬阿斯蒂芬阿斯蒂芬阿斯蒂芬阿斯蒂芬阿斯蒂芬</view>
-                <image src="{{myImgUrl}}"></image>
-            </view>
-            <view class="right left">
-                <image src="{{myImgUrl}}"></image>
-                <view class="cont">阿斯蒂芬阿斯蒂芬阿斯蒂芬阿斯蒂芬阿斯蒂芬阿斯蒂芬</view>
-            </view>
-            <view class="right">
-                <view class="cont">阿斯蒂芬阿斯蒂芬阿斯蒂芬阿斯蒂芬阿斯蒂芬阿斯蒂芬</view>
-                <image src="{{myImgUrl}}"></image>
-            </view>
-            <view class="right left">
-                <image src="{{myImgUrl}}"></image>
-                <view class="cont">阿斯蒂芬阿斯蒂芬阿斯蒂芬阿斯蒂芬阿斯蒂芬阿斯蒂芬</view>
-            </view>
-            <view class="right">
-                <view class="cont">阿斯蒂芬阿斯蒂芬阿斯蒂芬阿斯蒂芬阿斯蒂芬阿斯蒂芬</view>
-                <image src="{{myImgUrl}}"></image>
-            </view>
-            <view class="right left">
-                <image src="{{myImgUrl}}"></image>
-                <view class="cont">阿斯蒂芬阿斯蒂芬阿斯蒂芬阿斯蒂芬阿斯蒂芬阿斯蒂芬</view>
-            </view>
-            <view class="right">
-                <view class="cont">阿斯蒂芬阿斯蒂芬阿斯蒂芬阿斯蒂芬阿斯蒂芬阿斯蒂芬</view>
-                <image src="{{myImgUrl}}"></image>
-            </view>
-            <view class="right left">
-                <image src="{{myImgUrl}}"></image>
-                <view class="cont">阿斯蒂芬阿斯蒂芬阿斯蒂芬阿斯蒂芬阿斯蒂芬阿斯蒂芬</view>
-            </view>
-            <view class="right">
-                <view class="cont">阿斯蒂芬阿斯蒂芬阿斯蒂芬阿斯蒂芬阿斯蒂芬阿斯蒂芬</view>
-                <image src="{{myImgUrl}}"></image>
-            </view>
-            <view class="right left">
-                <image src="{{myImgUrl}}"></image>
-                <view class="cont">阿斯蒂芬阿斯蒂芬阿斯蒂芬阿斯蒂芬阿斯蒂芬阿斯蒂芬</view>
+            <!-- <view style="display:flex;flex-direction:column;margin-top:20rpx;" wx:for="{{chatList}}" wx:for-item="item" wx:key="*this">  -->
+            <view style="display:flex;flex-direction:column;margin-top:20rpx;">
+                <!-- <view class="right" wx:if="{{item.fl == 'right'}}">  -->
+                <view class="right">
+                    <!-- <rich-text nodes="{{nodes}}" class="cont"></rich-text> -->
+                    <template is="wxParse" data="{{wxParseData:article.nodes}}" />
+                    <image src="{{myImgUrl}}" wx:if="{{!!article.nodes}}"></image> 
+                </view>
+                <!-- <view class="right left" wx:else>
+                    <image src="{{myImgUrl}}"></image>
+                    <view class="cont">{{item.chat}}</view>
+                </view> -->
             </view>
         </view>
     </scroll-view>
