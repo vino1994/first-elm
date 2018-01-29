@@ -2,18 +2,19 @@
 <view class="content" style="height:{{hg}};">
     <scroll-view enable-back-to-top="true">
         <view class="dialogue">
-            <!-- <view style="display:flex;flex-direction:column;margin-top:20rpx;" wx:for="{{chatList}}" wx:for-item="item" wx:key="*this">  -->
-            <view style="display:flex;flex-direction:column;margin-top:20rpx;">
-                <!-- <view class="right" wx:if="{{item.fl == 'right'}}">  -->
-                <view class="right">
-                    <!-- <rich-text nodes="{{nodes}}" class="cont"></rich-text> -->
-                    <template is="wxParse" data="{{wxParseData:article.nodes}}" />
-                    <image src="{{myImgUrl}}" wx:if="{{!!article.nodes}}"></image> 
-                </view>
-                <!-- <view class="right left" wx:else>
+            <view style="display:flex;flex-direction:column;margin-top:20rpx;" wx:for="{{chatList}}" wx:for-item="item" wx:key="item.t">
+                <view style="display:flex;flex-direction:column;margin-top:20rpx;">
+                    <view class="right" wx:if="{{item.fl == 'right'}}">
+                        <!-- <rich-text nodes="{{nodes}}" class="cont"></rich-text> -->
+                        <view class="cont">
+                            <template is="wxParse" data="{{wxParseData:item.article.nodes}}" />
+                        </view>
+                        <image class="acUrl" src="{{myImgUrl}}" wx:if="{{!!item.article.nodes}}"></image>
+                    </view>
+                    <!-- <view class="right left" wx:else>
                     <image src="{{myImgUrl}}"></image>
-                    <view class="cont">{{item.chat}}</view>
-                </view> -->
+                    <view class="cont">{{item.chat}}</view> -->
+                </view>
             </view>
         </view>
     </scroll-view>

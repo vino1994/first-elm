@@ -98,6 +98,7 @@ Page({
 
     //send
     send: function (e) {
+        let list = [];
         if (!!e.detail.value) {
             this.setData({
                 sendValue: e.detail.value,
@@ -105,7 +106,14 @@ Page({
             })
             this.data.article = record.emojiHandle(this.data.sendValue)
         }
-        WxParse.wxParse('article', 'html', this.data.article, this, 5);
+        let chatItem = WxParse.wxParse('article', 'html', this.data.article, this, 5);
+        chatItem.fl = 'right';
+        chatItem.t = new Date();
+        list.push(chatItem)
+        this.setData({
+            chatList: this.data.chatList.concat(list)
+        })
+        this.emoji._hideEmoji();
     },
 
 

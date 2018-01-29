@@ -24,8 +24,10 @@ page {
 }
 
 .dialogue .right {
+    position: relative;
     display: inline-flex;
     justify-content: flex-end;
+    align-items: center;
 }
 
 .dialogue .right:first-child {
@@ -36,26 +38,25 @@ page {
     display: inline-flex;
     flex-direction: row;
     align-items: center;
-    padding: 0 20rpx;
+    padding: 10rpx 20rpx;
     border-radius: 10rpx;
     max-width: 460rpx;
     background: #a2e563;
     font-size: 30rpx;
-    position: relative;
 }
 
-.dialogue .right .cont::after {
+.dialogue .right .cont::before {
     position: absolute;
     content: '';
     width: 20rpx;
     height: 20rpx;
     background: #a2e563;
-    right: -8rpx;
+    right: 94rpx;
     top: 30rpx;
     transform: rotate(45deg);
 }
 
-.dialogue .right image {
+.dialogue .right .acUrl {
     width: 80rpx;
     height: 80rpx;
     /* border-radius: 100%; */
