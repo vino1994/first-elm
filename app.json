@@ -1,8 +1,20 @@
 {
     "pages": [
-        "pages/shake/shake",
-        "pages/login/login",
-        "pages/index/index"
+        "pages/login/login"
+    ],
+    "subPackages": [
+        {
+            "root": "packageA",
+            "pages": [
+                "shake/shake"
+            ]
+        },
+        {
+            "root": "packageB",
+            "pages": [
+                "index/index"
+            ]
+        }
     ],
     "window": {
         "navigationBarBackgroundColor": "#585858",

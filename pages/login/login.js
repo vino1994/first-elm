@@ -46,7 +46,7 @@ Page({
             })
             setTimeout(() => {
                 wx.redirectTo({
-                    url: '../index/index',
+                    url: '/packageB/index/index',
                 })
             }, 2100)
         } else {
